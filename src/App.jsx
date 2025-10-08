@@ -93,6 +93,7 @@ const App = () => {
             <li>🎨 <strong>Design-Focused:</strong> Intuitive, polished interfaces.</li>
             <li>💻 <strong>Full-Stack Capable:</strong> Node.js, Firebase, REST APIs.</li>
             <li>🚀 <strong>Results-Oriented:</strong> Real experience, real quality.</li>
+            <li>    <strong>Customers and Recognition:</strong>I try my best on all projects to get you more customers and more business regonition</li>
           </ul>
         </div>
       </section>
@@ -103,23 +104,23 @@ const App = () => {
           <h2><FaTools className="icon" /> Services & Pricing</h2>
           <div className="service-card">
             <h3>🖥️ Custom Websites</h3>
-            <p>High-performance websites for portfolios, startups, and small businesses.</p>
-            <p className="price">Starting at $600</p>
+            <p>High-performance websites for portfolios, startups, businesses and more.</p>
+            <p className="price">Starting at $600 (Price may change based on Client request)</p>
           </div>
           <div className="service-card">
             <h3>⚙️ React Web Apps</h3>
             <p>Interactive apps with real-time data, authentication, and animations.</p>
-            <p className="price">Starting at $750</p>
+            <p className="price">Starting at $750 (Price may change based on Client request)</p>
           </div>
           <div className="service-card">
             <h3>🎨 UI/UX Design</h3>
             <p>Interfaces optimized for conversion and user experience.</p>
-            <p className="price">Starting at $140</p>
+            <p className="price">Starting at $140 (Price may change based on Client request)</p>
           </div>
           <div className="service-card">
             <h3>🔧 Fixes & Upgrades</h3>
             <p>Speed improvements, bug fixes, and modern design enhancements.</p>
-            <p className="price">Starting at $80</p>
+            <p className="price">Starting at $80 (Price may change based on Client request)</p>
           </div>
         </div>
       </section>
