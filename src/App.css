@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Inter:wght@400;500&display=swap');
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -10,9 +14,15 @@ body {
   overflow-x: hidden;
 }
 
-.app { width: 100vw; display: flex; flex-direction: column; }
+/* === APP WRAPPER === */
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Hero Section */
+/* === HERO SECTION === */
 .header {
   width: 100%;
   min-height: 100vh;
@@ -23,15 +33,15 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  color: #fff;
   text-align: center;
+  overflow: hidden;
 }
 
 .header::after {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6); /* dark overlay */
+  background: rgba(0, 0, 0, 0.45); /* More visible background */
   z-index: 1;
 }
 
@@ -45,59 +55,100 @@ body {
   -webkit-text-fill-color: transparent;
   position: relative;
   z-index: 2;
+  animation: fadeUp 1.2s ease forwards;
 }
 
 .subtitle {
   margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #ccc;
+  color: #ddd;
   max-width: 800px;
   position: relative;
   z-index: 2;
+  animation: fadeUp 1.6s ease forwards;
 }
 
-/* Sections as blocks */
+/* === FLOATING BANNER === */
+.floating-banner {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #00ff7f, #00cc66);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 255, 127, 0.5);
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.floating-banner:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 255, 127, 0.7);
+}
+
+/* === MIRROR EFFECT === */
+.header .mirror {
+  width: 100%;
+  height: 150px;
+  background: inherit;
+  transform: scaleY(-1);
+  opacity: 0.3;
+  filter: blur(3px);
+  position: relative;
+  z-index: 0;
+}
+
+/* === SECTIONS === */
 .section {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 100px 20px;
+  padding: 90px 20px;
+  margin-top: -60px; /* Overlap transition */
 }
 
 .section .content {
-  width: 80%;
+  width: 85%;
   max-width: 900px;
   padding: 50px;
-  border-radius: 25px;       /* Rounded */
-  background: #1f1f2b;       /* Default block color */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border-radius: 25px;
+  background: #1c1c1c;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Different block colors */
+/* === COLOR VARIANTS === */
 .section.why-partner .content { background: #2b1f3d; }
 .section.services .content { background: #383850; }
 .section.process .content { background: #464660; }
 .section.tech .content { background: #3a3a4f; }
 .section.contact .content { background: #2c2c3a; }
 
-/* Hover animation */
+/* === CONTENT STYLING === */
 .section .content:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 80px #00FFFF;
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 70px rgba(0, 255, 255, 0.4);
 }
 
 .section h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
-.section h2 .icon { color: #00ffff; font-size: 2rem; }
+.section h2 .icon {
+  color: #00ffff;
+  font-size: 2rem;
+}
 
 .section p, .section ul {
   font-size: 1.2rem;
@@ -105,158 +156,41 @@ body {
   margin-bottom: 20px;
 }
 
-.section ul { list-style: disc inside; margin-top: 10px; }
+.section ul {
+  list-style: disc inside;
+}
 
-.section a { color: #00ffff; text-decoration: none; }
-.section a:hover { text-decoration: underline; }
-
-/* Buttons */
-.btn {
+/* === BUTTONS === */
+.btn, .simple-hover-btn {
   display: inline-block;
   padding: 14px 40px;
   font-size: 1.1rem;
   border-radius: 50px;
-  border: 2px solid #00FFFF;
-  background: transparent;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: linear-gradient(90deg, #9D4EDD, #00FFFF);
-  transition: width 0.8s ease-in-out;
-  z-index: 0;
-}
-
-.btn span {
-  position: relative;
-  z-index: 2;
-  color: #00FFFF;
-  transition: color 0.5s ease-in-out;
-}
-
-.btn:hover::before { width: 100%; }
-.btn:hover span { color: #000; }
-.btn:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
-
-/* Contact Form */
-.contact-form { display: flex; flex-direction: column; gap: 15px; }
-.contact-form input, .contact-form textarea {
-  padding: 15px;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  outline: none;
-}
-.contact-form textarea { resize: vertical; min-height: 100px; }
-
-/* Tech Table */
-.tech-table { width: 100%; border-collapse: collapse; margin-top: 20px; color: #ccc; }
-.tech-table th, .tech-table td { padding: 12px 15px; border: 1px solid #444; text-align: left; }
-.tech-table th { background: #222; }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .title { font-size: 3rem; }
-  .subtitle { font-size: 1.25rem; }
-  .section h2 { font-size: 2rem; }
-  .section p, .section ul { font-size: 1rem; }
-  .section .content { width: 90%; padding: 30px; }
-}
-.section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 80px 20px;
-  margin-top: -60px; /* Creates overlap effect */
-}
-
-.section .content {
-  width: 80%;
-  max-width: 900px;
-  padding: 50px;
-  border-radius: 25px;
-  background: #1c1c1c;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-/* Mirror Effect */
-.header .mirror {
-  width: 100%;
-  height: 150px;
-  background: inherit;
-  transform: scaleY(-1);
-  opacity: 0.2;
-  filter: blur(2px);
-}
-
-/* Shimmer Button */
-.shimmer-btn {
-  position: relative;
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  border-radius: 50px;
-  border: none;
-  color: #fff;
-  background: linear-gradient(270deg, #00FFFF, #9D4EDD, #00FFFF);
-  background-size: 200% 100%;
-  cursor: pointer;
-  overflow: hidden;
-}
-/* Rounded blocks and shadows */
-.section .content {
-  width: 80%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 50px;
-  border-radius: 25px;
-  background: #111;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Service Cards */
-.service-card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* Mirror effect */
-.mirror {
-  width: 100%;
-  height: 150px;
-  margin-top: 30px;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0));
-  transform: scaleY(-1);
-}
-
-/* Simple hover button */
 .simple-hover-btn {
   background: #00FFFF;
   color: #000;
   border: none;
-  padding: 15px 30px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 .simple-hover-btn:hover {
   transform: scale(1.05);
   opacity: 0.8;
 }
 
-/* Rounded & stylish tables */
+/* === SERVICE CARDS === */
+.service-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* === TECH TABLE === */
 .tech-table {
   width: 100%;
   border-collapse: collapse;
@@ -264,41 +198,25 @@ body {
   border-radius: 15px;
   overflow: hidden;
 }
+
 .tech-table th, .tech-table td {
-  padding: 12px;
+  padding: 12px 15px;
   text-align: left;
 }
-.tech-table tr:nth-child(even) {
-  background: #1a1a1a;
-}
+
 .tech-table th {
   background: #222;
 }
+
+.tech-table tr:nth-child(even) {
+  background: #1a1a1a;
+}
+
 .tech-table td {
   background: #111;
 }
-/* Floating Hero Banner */
-.floating-banner {
-  position: absolute;
-  top: 110px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #00ff7f, #00cc66);
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 255, 127, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 10;
-}
 
-.floating-banner:hover {
-  transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 255, 127, 0.7);
-}
+/* === CONTACT SECTION === */
 .contact-info {
   display: flex;
   align-items: center;
@@ -307,35 +225,68 @@ body {
 }
 
 .copy-btn {
-  padding: 8px 16px;
-  background: #4caf50;
+  padding: 10px 18px;
+  background: #00cc66;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .copy-btn:hover {
-  background: #45a049;
+  background: #00ff99;
   transform: scale(1.05);
 }
 
+/* === TOAST ALERT === */
 .toast {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  background: #00cc66;
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  animation: fadeinout 2s forwards;
+  animation: fadeinout 2.5s forwards;
 }
 
 @keyframes fadeinout {
   0% { opacity: 0; transform: translateY(20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  90% { opacity: 1; transform: translateY(0); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-20px); }
 }
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .title { font-size: 3.2rem; }
+  .subtitle { font-size: 1.25rem; max-width: 90%; }
+  .section .content { width: 90%; padding: 40px; }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.6rem; }
+  .subtitle { font-size: 1.1rem; }
+  .floating-banner { font-size: 0.9rem; padding: 6px 15px; top: 100px; }
+  .section { padding: 70px 15px; }
+  .section h2 { font-size: 1.8rem; }
+  .section p, .section ul { font-size: 1rem; }
+  .service-card { padding: 15px; }
+  .copy-btn { padding: 8px 14px; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 2rem; letter-spacing: 1px; }
+  .subtitle { font-size: 1rem; line-height: 1.4; }
+  .section .content { width: 95%; padding: 25px; }
+  .floating-banner { font-size: 0.85rem; top: 90px; }
+}
+
