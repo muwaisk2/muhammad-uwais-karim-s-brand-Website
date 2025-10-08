@@ -104,17 +104,17 @@ const App = () => {
           <div className="service-card">
             <h3>🖥️ Custom Websites</h3>
             <p>High-performance websites for portfolios, startups, and small businesses.</p>
-            <p className="price">Starting at $450</p>
+            <p className="price">Starting at $600</p>
           </div>
           <div className="service-card">
             <h3>⚙️ React Web Apps</h3>
             <p>Interactive apps with real-time data, authentication, and animations.</p>
-            <p className="price">Starting at $350</p>
+            <p className="price">Starting at $750</p>
           </div>
           <div className="service-card">
             <h3>🎨 UI/UX Design</h3>
             <p>Interfaces optimized for conversion and user experience.</p>
-            <p className="price">Starting at $150</p>
+            <p className="price">Starting at $140</p>
           </div>
           <div className="service-card">
             <h3>🔧 Fixes & Upgrades</h3>
