@@ -65,11 +65,11 @@ const App = () => {
         </div>
 
         <h1 className="title" ref={titleRef}>
-          <FaRocket /> Muhammad Uwais Karim
+          <FaRocket /> NovaU Dev
         </h1>
         <p className="subtitle">
-          I’m a 12-year-old developer and designer from South Africa, building modern,
-          high-performance web apps and UI/UX experiences for brands and individuals.
+          I’m, Muhammad Uwais Karim, a 12-year-old developer and designer from South Africa, building modern,
+          high-performance web apps and UI/UX experiences for brands and individuals and more.
         </p>
 
         <div className="mirror"></div>
@@ -176,3 +176,4 @@ const App = () => {
 };
 
 export default App;
+
