@@ -59,7 +59,8 @@ html, body, #root {
   z-index: 5;
 }
 .floating-banner:hover {
-  background: rgba(102, 252, 241, 0.25);
+  background: #66fcf1;
+;
   box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
 }
 .title {
@@ -263,11 +264,11 @@ html, body, #root {
   background: purple;
   color: #fff;
   box-shadow: #45a29e 0 0 15px;
-  transition: 1s ease-in;
-  -webkit-transition: 1s ease-in;
-  -moz-transition: 1s ease-in;
-  -ms-transition: 1s ease-in;
-  -o-transition: 1s ease-in;
+  transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -ms-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
 }
 
 .toast {
