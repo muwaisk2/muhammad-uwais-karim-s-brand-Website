@@ -65,7 +65,7 @@ const App = () => {
         </div>
 
         <h1 className="title" ref={titleRef}>
-          <FaRocket /> NovaU Dev
+          <FaRocket /> NovaU Dev Studio:
         </h1>
         <p className="subtitle">
           I’m, Muhammad Uwais Karim, a 12-year-old developer and designer from South Africa, building modern,
@@ -93,7 +93,7 @@ const App = () => {
             <li>🎨 <strong>Design-Focused:</strong> Intuitive, polished interfaces.</li>
             <li>💻 <strong>Full-Stack Capable:</strong> Node.js, Firebase, REST APIs.</li>
             <li>🚀 <strong>Results-Oriented:</strong> Real experience, real quality.</li>
-            <li>    <strong>Customers and Recognition:</strong>I try my best on all projects to get you more customers and more business regonition</li>
+            <li>   <strong>Customers and Recognition:</strong>I try my best on all projects to get you more customers and more business regonition</li>
           </ul>
         </div>
       </section>
